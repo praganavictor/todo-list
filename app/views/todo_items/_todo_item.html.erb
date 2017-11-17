@@ -1,16 +1,28 @@
 
-  <div class="row clearfix">
-  <p>
-    <% if todo_item.completed? %>
-      <spam style="opacity: 0.4;"><strike><%= todo_item.content %></strike></spam>
-      <%= link_to "✓", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>    
-      <%= link_to "×", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Tem certeza?"} %>    
-  </p>
-  <% else %>
-  <p>  
-    <%= link_to "✓", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>    
-    <spam><%= todo_item.content %></spam>
-    <%= link_to "×", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Tem certeza?"} %>    
-  </p>
+  <div>
+  <table class="highlight">
+  <thead>
+    <tr>
+        <th>Tarefa</th>
+        <th>Concluido</th>
+        <th>Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <% if todo_item.completed? %>    
+    
+      <td style="opacity: 0.4;"><strike><%= todo_item.content %></strike></td>
+      <td><%= link_to "✓", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %> </td>
+      <td><%= link_to "×", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Tem certeza?"} %> </td>
+
+    <% else %>
+      <td><%= todo_item.content %> </td> 
+      <td><%= link_to "✓", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %> </td>
+      <td><%= link_to "×", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Tem certeza?"} %> </td>
+
     <% end %>
+    </tr>
+  </tbody>
+  </table>
   </div>

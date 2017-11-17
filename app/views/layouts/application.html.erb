@@ -9,6 +9,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+
+      <% if user_signed_in? %>
+        <p>Olá, <%= current_user.name %> - <%= link_to "Deslogar", destroy_user_session_path, :method => 'delete' %> </p>
+        <br>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
