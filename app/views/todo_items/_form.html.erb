@@ -1,4 +1,9 @@
 <%= form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
   <%= f.text_field :content, placeholder: "Nova tarefa" %>
-  <%= f.submit %>
+  
+  <div class="actions">
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+      <%= f.submit %>
+    </button>
+  </div>
 <% end %>

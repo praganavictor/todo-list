@@ -9,12 +9,21 @@
   </head>
 
   <body>
-    <div class="container">
+  <nav>
+  <div class="nav-wrapper">
+    <a class="brand-logo">MyApp</a>
+    <% if user_signed_in? %>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>Olá, <%= current_user.name %></li>
+        <li><%= link_to "Deslogar", destroy_user_session_path, :method => 'delete' %></li>
+      </ul>
+    <% end %>
+  </div>
+</nav>
+    <div class="container ">
 
-      <% if user_signed_in? %>
-        <p>Olá, <%= current_user.name %> - <%= link_to "Deslogar", destroy_user_session_path, :method => 'delete' %> </p>
-        <br>
-      <% end %>
+    
+
       <%= yield %>
     </div>
   </body>

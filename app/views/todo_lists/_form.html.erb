@@ -21,6 +21,10 @@
     <%= form.text_area :description, id: :todo_list_description %>
   </div>
 
+  <div class="field">
+    <%= form.hidden_field :creator, id: :todo_list_creator %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

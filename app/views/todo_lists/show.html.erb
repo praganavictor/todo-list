@@ -10,9 +10,15 @@
   <%= @todo_list.description %>
 </p>
 
+<p>
+  <strong>Creator:</strong>
+  <%= @todo_list.creator %>
+</p>
+
 <h5>
   <strong>Lista de tarefas</strong>
 </h5>
+
 
 <div id="todo_item_wrapper">
   <%= render @todo_list.todo_items %>
@@ -20,6 +26,7 @@
     <%= render "todo_items/form" %>
   </div>
 </div>
+<br>
 
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
 <%= link_to 'Back', todo_lists_path %>
