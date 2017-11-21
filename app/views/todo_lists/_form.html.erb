@@ -25,7 +25,16 @@
     <%= form.hidden_field :creator, id: :todo_list_creator %>
   </div>
 
+  <div class="field">
+    <%= check_box_tag :list_privada %>
+    <%= label_tag :list_privada, "Privado" %>
+  </div>
+
+  <br>
   <div class="actions">
+  <button class="btn waves-effect waves-light" type="submit" name="action">
     <%= form.submit %>
+  </button>
+  
   </div>
 <% end %>

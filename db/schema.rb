@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171119213437) do
     t.string "title"
     t.text "description"
     t.string "creator"
+    t.boolean "list_privada"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
